@@ -1,0 +1,39 @@
+.ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4.625rem;
+}
+
+.item {
+  background: var(--light-mode-background);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 0.2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.itemList {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--light-mode-text);
+  background: white;
+}
+
+.itemList h1 {
+  font-size: 1.125rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.itemList li {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.itemList span {
+  font-weight: 800;
+}

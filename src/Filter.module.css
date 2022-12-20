@@ -1,0 +1,41 @@
+.filter {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter input {
+  padding: 1rem 4rem;
+  width: 30rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  color: var(--light-mode-input);
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 0.2rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.filter input:hover,
+.filter input:focus {
+  border-color: var(--light-mode-input);
+}
+
+.filter select {
+  outline: none;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  width: 12.5rem;
+  font-size: 0.875rem;
+  color: var(--light-mode-input);
+  border-radius: 0.2rem;
+}
+
+.filter select option {
+  outline: none;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.05);
+  margin-top: 1rem;
+}

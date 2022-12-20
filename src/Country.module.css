@@ -1,0 +1,24 @@
+.countryPage {
+  margin-top: 6rem;
+  color: var(--light-mode-text);
+}
+
+.infoWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7.5rem;
+}
+
+.divWrapper {
+  padding: 3rem;
+}
+
+.listWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.listWrapper h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
