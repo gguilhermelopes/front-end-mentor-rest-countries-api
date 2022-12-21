@@ -6,13 +6,23 @@ import Header from "./Header";
 import Home from "./Home";
 
 const App = () => {
+  const [darkTheme, setDarkTheme] = React.useState(false);
+  if (darkTheme) {
+    document.body.classList.add("darkTheme");
+  } else {
+    document.body.classList.remove("darkTheme");
+  }
+
   return (
     <BrowserRouter>
-      <Header />
+      <Header darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="country/:name" element={<Country />} />
+          <Route path="/" element={<Home darkTheme={darkTheme} />} />
+          <Route
+            path="country/:name"
+            element={<Country darkTheme={darkTheme} />}
+          />
         </Routes>
       </main>
     </BrowserRouter>

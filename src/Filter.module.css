@@ -12,9 +12,15 @@
   color: var(--light-mode-input);
   border: 1px solid transparent;
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.05);
-  border-radius: 0.2rem;
+  border-radius: 0.4rem;
   outline: none;
-  transition: 0.3s;
+  position: absolute;
+}
+
+:global(.darkTheme).filter input {
+  background-color: var(--dark-mode-elements);
+  color: var(--light-mode-elements);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
 }
 
 .filter input:hover,
@@ -22,20 +28,58 @@
   border-color: var(--light-mode-input);
 }
 
+:global(.darkTheme).filter input:hover,
+:global(.darkTheme).filter input:focus {
+  border-color: var(--light-mode-input);
+}
+
+:global(.darkTheme).filter input::placeholder {
+  color: var(--light-mode-elements);
+}
+
+.filter label svg {
+  position: relative;
+  top: 15px;
+  right: -40px;
+  z-index: 1;
+}
+
 .filter select {
   outline: none;
   border: 1px solid transparent;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.05);
   padding: 1rem;
   width: 12.5rem;
   font-size: 0.875rem;
+  font-family: inherit;
   color: var(--light-mode-input);
-  border-radius: 0.2rem;
+  border-radius: 0.4rem;
 }
 
-.filter select option {
-  outline: none;
-  border: 1px solid transparent;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.05);
-  margin-top: 1rem;
+:global(.darkTheme).filter select {
+  background-color: var(--dark-mode-elements);
+  color: var(--light-mode-elements);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 850px) {
+  .filter input {
+    width: 20rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .filter input {
+    margin-bottom: 1rem;
+    width: 100%;
+    position: initial;
+  }
+  .filter {
+    display: block;
+    margin-top: 4rem;
+  }
+  .filter label svg {
+    top: 42px;
+    right: -25px;
+  }
 }

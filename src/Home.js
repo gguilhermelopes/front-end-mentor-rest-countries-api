@@ -2,11 +2,11 @@ import React from "react";
 import Filter from "./Filter";
 import HomeInfo from "./HomeInfo";
 
-const Home = () => {
+const Home = ({ darkTheme }) => {
   return (
     <section>
-      <Filter />
-      <HomeInfo />
+      <Filter darkTheme={darkTheme} />
+      <HomeInfo darkTheme={darkTheme} />
     </section>
   );
 };

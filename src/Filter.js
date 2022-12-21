@@ -1,18 +1,27 @@
 import React from "react";
 import styles from "./Filter.module.css";
+import { ReactComponent as Search } from "./Assets/search.svg";
+import { ReactComponent as SearchDarkMode } from "./Assets/search_darkmode.svg";
 
-const Filter = () => {
+const Filter = ({ darkTheme }) => {
   const [countryInput, setCountryInput] = React.useState("");
   const [regionSelect, setRegionSelect] = React.useState("");
 
   return (
-    <div className={`container ${styles.filter}`}>
-      <input
-        type="text"
-        placeholder="Search for a country..."
-        value={countryInput}
-        onChange={({ target }) => setCountryInput(target.value)}
-      />
+    <div
+      className={`container ${
+        darkTheme ? `darkTheme ${styles.filter}` : `${styles.filter}`
+      } `}
+    >
+      <label>
+        {darkTheme ? <SearchDarkMode /> : <Search />}
+        <input
+          type="text"
+          placeholder="Search for a country..."
+          value={countryInput}
+          onChange={({ target }) => setCountryInput(target.value)}
+        />
+      </label>
       <select
         value={regionSelect}
         onChange={({ target }) => setRegionSelect(target.value)}
