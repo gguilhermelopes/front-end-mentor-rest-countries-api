@@ -4,9 +4,11 @@ import styles from "./HomeInfo.module.css";
 import { Link } from "react-router-dom";
 import Loading from "./Interface Elements/Loading";
 import Error from "./Interface Elements/Error";
+import { GlobalContext } from "./Hooks/GlobalContext";
 
 const HomeInfo = ({ darkTheme }) => {
   const { data, loading, error, request } = useFetch();
+  const { countryInput, regionSelect } = React.useContext(GlobalContext);
 
   React.useEffect(() => {
     async function fetchData() {
@@ -25,37 +27,60 @@ const HomeInfo = ({ darkTheme }) => {
             darkTheme ? `darkTheme ${styles.ul}` : `${styles.ul}`
           } `}
         >
-          {data.map((item) => (
-            <li
-              className={`${
-                darkTheme ? `darkTheme ${styles.item}` : `${styles.item}`
-              } `}
-              key={item.numericCode}
-            >
-              <Link to={`country/${item.name}`}>
-                <img src={item.flags.svg} alt={`${item.name}'s flag`} />
-              </Link>
-              <ul
+          {data
+            .filter((value) => {
+              if (countryInput === "") {
+                return value;
+              } else if (
+                value.name
+                  .toLowerCase()
+                  .includes(countryInput.toLowerCase().trimStart())
+              ) {
+                return value;
+              } else {
+                return null;
+              }
+            })
+            .filter((value) => {
+              if (regionSelect === "" || regionSelect.includes("All")) {
+                return value;
+              } else if (value.region.includes(regionSelect)) {
+                return value;
+              } else {
+                return null;
+              }
+            })
+            .map((item) => (
+              <li
                 className={`${
-                  darkTheme
-                    ? `darkTheme ${styles.itemList}`
-                    : `${styles.itemList}`
+                  darkTheme ? `darkTheme ${styles.item}` : `${styles.item}`
                 } `}
+                key={item.numericCode}
               >
-                <h1>{item.name}</h1>
-                <li>
-                  <span>Population:</span>{" "}
-                  {item.population.toLocaleString("en-US")}
-                </li>
-                <li>
-                  <span>Region:</span> {item.region}
-                </li>
-                <li>
-                  <span>Capital:</span> {item.capital ? item.capital : "None"}
-                </li>
-              </ul>
-            </li>
-          ))}
+                <Link to={`country/${item.name}`}>
+                  <img src={item.flags.svg} alt={`${item.name}'s flag`} />
+                </Link>
+                <ul
+                  className={`${
+                    darkTheme
+                      ? `darkTheme ${styles.itemList}`
+                      : `${styles.itemList}`
+                  } `}
+                >
+                  <h1>{item.name}</h1>
+                  <li>
+                    <span>Population:</span>{" "}
+                    {item.population.toLocaleString("en-US")}
+                  </li>
+                  <li>
+                    <span>Region:</span> {item.region}
+                  </li>
+                  <li>
+                    <span>Capital:</span> {item.capital ? item.capital : "None"}
+                  </li>
+                </ul>
+              </li>
+            ))}
         </ul>
       </section>
     );

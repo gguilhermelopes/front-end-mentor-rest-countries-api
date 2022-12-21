@@ -4,6 +4,7 @@ import "./App.css";
 import Country from "./Country";
 import Header from "./Header";
 import Home from "./Home";
+import { GlobalStorage } from "./Hooks/GlobalContext";
 
 const App = () => {
   const [darkTheme, setDarkTheme] = React.useState(false);
@@ -17,13 +18,15 @@ const App = () => {
     <BrowserRouter>
       <Header darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
       <main>
-        <Routes>
-          <Route path="/" element={<Home darkTheme={darkTheme} />} />
-          <Route
-            path="country/:name"
-            element={<Country darkTheme={darkTheme} />}
-          />
-        </Routes>
+        <GlobalStorage>
+          <Routes>
+            <Route path="/" element={<Home darkTheme={darkTheme} />} />
+            <Route
+              path="country/:name"
+              element={<Country darkTheme={darkTheme} />}
+            />
+          </Routes>
+        </GlobalStorage>
       </main>
     </BrowserRouter>
   );

@@ -12,7 +12,7 @@
   padding: 0.75rem 3rem;
   border: 1px solid transparent;
   background: var(--light-mode-elements);
-  border-radius: 0.4em;
+  border-radius: 0.4rem;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
   font-size: 1rem;
   color: var(--light-mode-text);
@@ -72,7 +72,35 @@
 
 .listWrapper div + div {
   margin-left: 5rem;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
+}
+
+.bordersWrapper span {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.borders {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.borders li {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid transparent;
+  background: var(--light-mode-elements);
+  border-radius: 0.4rem;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+  font-size: 1rem;
+  color: var(--light-mode-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 1000px) {

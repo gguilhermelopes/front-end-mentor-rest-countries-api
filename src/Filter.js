@@ -2,10 +2,11 @@ import React from "react";
 import styles from "./Filter.module.css";
 import { ReactComponent as Search } from "./Assets/search.svg";
 import { ReactComponent as SearchDarkMode } from "./Assets/search_darkmode.svg";
+import { GlobalContext } from "./Hooks/GlobalContext";
 
 const Filter = ({ darkTheme }) => {
-  const [countryInput, setCountryInput] = React.useState("");
-  const [regionSelect, setRegionSelect] = React.useState("");
+  const { countryInput, setCountryInput, regionSelect, setRegionSelect } =
+    React.useContext(GlobalContext);
 
   return (
     <div
@@ -13,7 +14,7 @@ const Filter = ({ darkTheme }) => {
         darkTheme ? `darkTheme ${styles.filter}` : `${styles.filter}`
       } `}
     >
-      <label>
+      <div>
         {darkTheme ? <SearchDarkMode /> : <Search />}
         <input
           type="text"
@@ -21,7 +22,7 @@ const Filter = ({ darkTheme }) => {
           value={countryInput}
           onChange={({ target }) => setCountryInput(target.value)}
         />
-      </label>
+      </div>
       <select
         value={regionSelect}
         onChange={({ target }) => setRegionSelect(target.value)}
@@ -29,8 +30,9 @@ const Filter = ({ darkTheme }) => {
         <option disabled value="">
           Filter by Region
         </option>
+        <option value="All">All</option>
         <option value="Africa">Africa</option>
-        <option value="America">America</option>
+        <option value="America">Americas</option>
         <option value="Asia">Asia</option>
         <option value="Europe">Europe</option>
         <option value="Oceania">Oceania</option>

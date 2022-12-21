@@ -20,7 +20,7 @@ const Country = ({ darkTheme }) => {
 
   if (loading) return <Loading />;
   if (error) return <Error />;
-  if (data)
+  if (data) {
     return (
       <section
         className={`container ${
@@ -78,15 +78,23 @@ const Country = ({ darkTheme }) => {
                 </li>
               </div>
             </ul>
-            <p>
-              <span>Border Countries: </span>
-              {data[0].borders ? data[0].borders.join(" ") : "None"}
-            </p>
+            <div className={styles.bordersWrapper}>
+              <span>Border Countries</span>
+              <div>
+                <ul className={styles.borders}>
+                  {data[0].borders ? (
+                    data[0].borders.map((item) => <li key={item}>{item}</li>)
+                  ) : (
+                    <li>None</li>
+                  )}
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     );
-  else return null;
+  } else return null;
 };
 
 export default Country;

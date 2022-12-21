@@ -4,6 +4,10 @@
   justify-content: space-between;
 }
 
+.filter div {
+  position: relative;
+}
+
 .filter input {
   padding: 1rem 4rem;
   width: 30rem;
@@ -14,7 +18,6 @@
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.05);
   border-radius: 0.4rem;
   outline: none;
-  position: absolute;
 }
 
 :global(.darkTheme).filter input {
@@ -37,11 +40,11 @@
   color: var(--light-mode-elements);
 }
 
-.filter label svg {
-  position: relative;
+.filter div svg {
+  position: absolute;
   top: 15px;
-  right: -40px;
-  z-index: 1;
+  left: 18px;
+  z-index: 10;
 }
 
 .filter select {
@@ -76,10 +79,6 @@
   }
   .filter {
     display: block;
-    margin-top: 4rem;
-  }
-  .filter label svg {
-    top: 42px;
-    right: -25px;
+    margin-top: 5rem;
   }
 }
