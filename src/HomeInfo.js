@@ -60,7 +60,7 @@ const HomeInfo = ({ darkTheme }) => {
                 <Link to={`country/${item.name}`}>
                   <img src={item.flags.svg} alt={`${item.name}'s flag`} />
                 </Link>
-                <ul
+                <div
                   className={`${
                     darkTheme
                       ? `darkTheme ${styles.itemList}`
@@ -78,7 +78,7 @@ const HomeInfo = ({ darkTheme }) => {
                   <li>
                     <span>Capital:</span> {item.capital ? item.capital : "None"}
                   </li>
-                </ul>
+                </div>
               </li>
             ))}
         </ul>
