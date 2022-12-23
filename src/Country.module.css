@@ -21,6 +21,7 @@
   align-items: center;
   justify-content: center;
   gap: 15px;
+  outline: none;
 }
 
 .countryPage button:hover,
@@ -101,6 +102,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.borders li:hover,
+.borders li:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+:global(.darkTheme).borders li {
+  background: var(--dark-mode-elements);
+  color: var(--light-mode-elements);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+:global(.darkTheme).borders li:hover,
+:global(.darkTheme).borders li:focus {
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 @media (max-width: 1000px) {
