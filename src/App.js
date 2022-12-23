@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Country from "./Country";
 import Header from "./Header";
@@ -15,7 +15,7 @@ const App = () => {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
       <main>
         <GlobalStorage>
@@ -28,7 +28,7 @@ const App = () => {
           </Routes>
         </GlobalStorage>
       </main>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

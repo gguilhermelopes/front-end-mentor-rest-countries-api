@@ -27,12 +27,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./where.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/gguilhermelopes/front-end-mentor-rest-countries-api)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Repository](https://github.com/gguilhermelopes/front-end-mentor-rest-countries-api)
+- Live Site URL: [Live URL](https://gguilhermelopes.github.io/front-end-mentor-rest-countries-api/)
 
 ## My process
 

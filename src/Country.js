@@ -100,8 +100,11 @@ const Country = ({ darkTheme }) => {
                             return item.borders.includes(value.alpha3Code);
                           })
                           .map((value) => (
-                            <Link to={`/country/${value.name}`}>
-                              <li key={value.name}>{value.name}</li>
+                            <Link
+                              key={value.nativeName}
+                              to={`/country/${value.name}`}
+                            >
+                              <li>{value.name}</li>
                             </Link>
                           ))
                       ) : (
