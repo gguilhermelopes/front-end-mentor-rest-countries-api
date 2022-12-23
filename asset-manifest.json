@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/front-end-mentor-rest-countries-api/static/css/main.14293ac6.css",
-    "main.js": "/front-end-mentor-rest-countries-api/static/js/main.c7ab2724.js",
+    "main.js": "/front-end-mentor-rest-countries-api/static/js/main.459ba685.js",
     "static/media/light_mode.svg": "/front-end-mentor-rest-countries-api/static/media/light_mode.402f840845544c8775e087bf2c07574b.svg",
     "index.html": "/front-end-mentor-rest-countries-api/index.html",
     "static/media/search_darkmode.svg": "/front-end-mentor-rest-countries-api/static/media/search_darkmode.b644ed3562ed6eb952c3c06403dbae46.svg",
@@ -10,10 +10,10 @@
     "static/media/arrow_back_darkmode.svg": "/front-end-mentor-rest-countries-api/static/media/arrow_back_darkmode.793921c6f40dfde99f8986f9efa36703.svg",
     "static/media/arrow_back.svg": "/front-end-mentor-rest-countries-api/static/media/arrow_back.41d385b250fdb989e15157e9dc4b243a.svg",
     "main.14293ac6.css.map": "/front-end-mentor-rest-countries-api/static/css/main.14293ac6.css.map",
-    "main.c7ab2724.js.map": "/front-end-mentor-rest-countries-api/static/js/main.c7ab2724.js.map"
+    "main.459ba685.js.map": "/front-end-mentor-rest-countries-api/static/js/main.459ba685.js.map"
   },
   "entrypoints": [
     "static/css/main.14293ac6.css",
-    "static/js/main.c7ab2724.js"
+    "static/js/main.459ba685.js"
   ]
 }
