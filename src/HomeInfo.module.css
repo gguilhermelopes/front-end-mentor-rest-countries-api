@@ -31,7 +31,7 @@
   color: var(--light-mode-elements);
 }
 
-.itemList h1 {
+.itemList h2 {
   font-size: 1.125rem;
   font-weight: 800;
   margin-bottom: 1rem;

@@ -47,7 +47,7 @@ const Country = ({ darkTheme }) => {
                 <img src={item.flags.svg} alt={`${item.name}'s flag`} />
               </div>
               <div className={styles.divWrapper}>
-                <div className={styles.listWrapper}>
+                <ul className={styles.listWrapper}>
                   <h1>{item.name}</h1>
                   <div>
                     <li>
@@ -83,7 +83,7 @@ const Country = ({ darkTheme }) => {
                         .join(", ")}
                     </li>
                   </div>
-                </div>
+                </ul>
                 <div className={styles.bordersWrapper}>
                   <span>Border Countries</span>
                   <div>

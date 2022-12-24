@@ -24,6 +24,7 @@ const Filter = ({ darkTheme }) => {
         />
       </div>
       <select
+        aria-label="Select Region"
         value={regionSelect}
         onChange={({ target }) => setRegionSelect(target.value)}
       >

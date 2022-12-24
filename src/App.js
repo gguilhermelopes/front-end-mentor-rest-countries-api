@@ -8,11 +8,14 @@ import { GlobalStorage } from "./Hooks/GlobalContext";
 
 const App = () => {
   const [darkTheme, setDarkTheme] = React.useState(false);
-  if (darkTheme) {
-    document.body.classList.add("darkTheme");
-  } else {
-    document.body.classList.remove("darkTheme");
-  }
+
+  React.useEffect(() => {
+    if (darkTheme) {
+      document.body.classList.add("darkTheme");
+    } else {
+      document.body.classList.remove("darkTheme");
+    }
+  }, [darkTheme]);
 
   return (
     <HashRouter>

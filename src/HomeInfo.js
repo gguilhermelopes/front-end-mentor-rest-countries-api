@@ -60,14 +60,16 @@ const HomeInfo = ({ darkTheme }) => {
                 <Link to={`country/${item.name}`}>
                   <img src={item.flags.svg} alt={`${item.name}'s flag`} />
                 </Link>
-                <div
+                <ul
                   className={`${
                     darkTheme
                       ? `darkTheme ${styles.itemList}`
                       : `${styles.itemList}`
                   } `}
                 >
-                  <h1>{item.name}</h1>
+                  <li>
+                    <h2>{item.name}</h2>
+                  </li>
                   <li>
                     <span>Population:</span>{" "}
                     {item.population.toLocaleString("en-US")}
@@ -78,7 +80,7 @@ const HomeInfo = ({ darkTheme }) => {
                   <li>
                     <span>Capital:</span> {item.capital ? item.capital : "None"}
                   </li>
-                </div>
+                </ul>
               </li>
             ))}
         </ul>
